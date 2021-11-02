@@ -1,0 +1,97 @@
+#:import utils kivy.utils
+
+<SecondScreen>
+
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("F3EFEF")
+			Rectangle:
+				size: self.size
+				pos: self.pos
+
+		
+		TextInput:
+			id: mass1
+			hint_text: "mass"
+			input_type: "number"
+			input_filter: lambda number, from_undo: number[:3 - len(self.text)]
+			size_hint: 0.3, 0.06
+			pos_hint: {"top": .45 , "center_x": 0.5}
+
+
+		Button:
+			background_color: 0,0,0,0
+			canvas.before:
+				Color: 
+					rgb: utils.get_color_from_hex("F33434")
+				RoundedRectangle:
+		            pos: self.pos
+		            size: self.size
+		            radius: [10]
+			id: first_button1
+			text: "сохранить"
+			background_normal: ""
+			
+			size_hint: 0.3, 0.06
+			pos_hint: {"top": .39 , "center_x": 0.5}
+			
+			on_release:
+				app.starter2()
+				app.data_base(8, mass1.text)
+				app.base_data()
+				text_sefed.text = "СОХРАНЕНО"
+				
+				
+
+		GridLayout:
+			canvas:
+				Color: 
+					rgb: utils.get_color_from_hex("F3EFEF")
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			rows: 1
+
+			pos_hint: {"top": .51 , "center_x": 0.5}
+			size_hint: 0.5, 0.05
+			Button:
+				id: radiouttton1
+				text: "Сердце1"
+				background_normal: ""
+				background_color: (131/255 , 131/255, 131/255, 1)
+				on_release:
+					background_color: (0,1,1,1)
+					app.animation_button_gray(self)
+					app.animation_button_back_gray(radiouttton2)
+					text_sefed.text = ""
+			Button:
+				id: radiouttton2
+				text: "Сердце2"
+				background_normal: ""
+				background_color:(225/255,200/255,200/255,1)
+				on_release:
+					background_color:(0,1,1,1)
+					app.animation_button_gray(self)
+					app.animation_button_back_gray(radiouttton1)
+					text_sefed.text = ""
+	FloatLayout:
+		Label:
+			id: first_text
+			size_hint: .7, 0.06
+			text: "ГРАФИК"
+			pos_hint: {"top": 1 , "center_x": .5}
+			color: 110/255,83/255,83/255,1
+		Label:
+			id: text_sefed
+			size_hint: .7, 0.06
+			text: ""
+			pos_hint: {"top": .3 , "center_x": .5}
+			color: 110/255,83/255,83/255,1
+	ScreenManager:
+		id: screen_manager
+		BarGraph:
+			name: "bargraph"
+			id: bargraph
+			size_hint: .8, 0.4
+			pos_hint: {"top": .95 , "center_x": .5}

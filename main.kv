@@ -1,0 +1,144 @@
+#: include kv/firstscreen.kv
+#: include kv/secondscreen.kv
+#: include kv/thirdscreen.kv
+#: include kv/pulse.kv
+#: include kv/breese.kv
+#: include kv/resalt.kv
+#: include kv/bargraph.kv
+#: include kv/information.kv
+#: include kv/information_view.kv
+#: include kv/drags.kv
+#: include kv/dragschoise.kv
+#:import utils kivy.utils
+
+
+
+GridLayout:
+	cols: 1
+
+	
+
+
+	ScreenManager:
+		id: screen_manager
+		FirstScrren:
+			name: "screen1"
+			id: screen1
+			direction:'left'
+		Pulse:
+			name: "pulse"
+			id: pulse
+
+		Breese:
+			name: "breese"
+			id: breese
+		Resalt:
+			name: "resalt"
+			id: resalt
+		SecondScreen:
+			name: "screen2"
+			id: screen2
+			direction:'up'
+	
+		ThirdScreen:
+			name: "screen3"
+			id: screen3
+		BarGraph:
+			name: "bargraph"
+			id: bargraph
+		Information:
+			name: "information"
+			id: information
+		Information_veiw:
+			name: "information_veiw"
+			id: information_veiw
+		Drags:
+			name: "drags"
+			id: drags
+		DragsChoise:
+			name: "dragschoise"
+			id: dragschoise
+	
+
+
+
+
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("F3CACA")
+			Rectangle:
+				size: self.size
+				pos: self.pos
+
+		size_hint: 1, .08
+		GridLayout:
+			rows: 1
+			spacing: 1
+			pos_hint: {"bottom": .1 , "left": 1}
+
+
+
+
+			Button:
+				id: first_button
+				text: "Дневник"
+				background_normal: ""
+				background_color: 243/255,132/255,132/255,1
+
+				
+				
+				on_release:
+					background_color: (0,1,1,1)
+					app.change_screen("screen1")
+					app.animation_button(self)
+					app.animation_button_back(second_button)
+					app.animation_button_back(third_button)	
+					app.animation_button_back(inf_button)
+					app.first_screen1()		
+
+
+
+			Button:
+				id: second_button
+				background_normal: ""
+				background_color: (243/255,52/255,52/255,1)
+				text: "Диурез"
+				color: (1,1,1,1)
+				on_release:					
+					app.change_screen("screen2")
+					app.animation_button(self)
+					app.animation_button_back(first_button)
+					app.animation_button_back(third_button)
+					app.animation_button_back(inf_button)
+					app.bar_state_secondscreen()
+			Button:
+				id: inf_button
+				background_normal: ""
+				background_color: (243/255,52/255,52/255,1)
+				text: "Справка"
+				color: (1,1,1,1)
+				on_release:					
+					app.change_screen("information")
+					app.animation_button(self)
+					app.animation_button_back(first_button)
+					app.animation_button_back(third_button)
+					app.animation_button_back(second_button)
+					app.bar_state_secondscreen()
+
+			Button:
+				id: third_button
+				background_normal: ""
+				background_color: (243/255,52/255,52/255,1)
+				text: "Анкета"
+				color: (1,1,1,1)
+				on_release:		
+
+				on_release:
+					app.change_screen("screen3")
+					app.animation_button(self)
+					app.animation_button_back(first_button)
+					app.animation_button_back(second_button)
+					app.animation_button_back(inf_button)
+					app.self_data_read()
+					app.update_case()

@@ -1,0 +1,92 @@
+<Drags>:
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("F3EFEF")
+			Rectangle:
+				size: root.width, root.height
+				pos: self.pos
+
+
+		FloatLayout:
+			
+			Spinner:
+				id: spinner_id
+				text:"ЛЕКАРСТВО"
+				size_hint: 0.7, 0.06
+				sync_height:True
+				pos_hint: {"top": .95 , "center_x": 0.5}
+				
+
+				
+			Spinner:
+				id: spinner_id2
+				text:"ДОЗИРОВКА"
+				size_hint: 0.7, 0.06
+				sync_height: True
+				pos_hint: {"top": .75 , "center_x": 0.5}
+			Spinner:
+				id: spinner_id3
+				text:"ЧАСТОТА ПРИЕМА"
+				size_hint: 0.7, 0.06
+				pos_hint: {"top": .55 , "center_x": 0.5}
+				sync_height: True
+									   
+
+				
+
+				
+			TextInput:
+				id: birthday
+				hint_text: "Название лекарств"
+				size_hint: 0.7, 0.06
+				pos_hint: {"top": .85 , "center_x": 0.5}
+			
+			TextInput:
+				id: doz
+				hint_text: "Дозировка"
+				size_hint: 0.7, 0.06
+				pos_hint: {"top": .65 , "center_x": 0.5}
+			
+			
+	
+			
+	FloatLayout:
+		
+		Label:
+			id: first_text
+			size_hint: .7, 0.06
+			text: "Доп лекарство"
+			pos_hint: {"top": .9 , "center_x": .5}	
+			color: 110/255,83/255,83/255,1
+		Label:
+			id: first_text
+			size_hint: .7, 0.06
+			text: "Дозировка"
+			pos_hint: {"top": .8 , "center_x": .5}
+			color: 110/255,83/255,83/255,1	
+		Label:
+			id: first_text
+			size_hint: .7, 0.06
+			text: "Доп дозировка"
+			pos_hint: {"top": .7 , "center_x": .5}
+			color: 110/255,83/255,83/255,1	
+		Label:
+			id: first_text
+			size_hint: .7, 0.06
+			text: "Частота приёма"
+			pos_hint: {"top": .6 , "center_x": .5}
+			color: 110/255,83/255,83/255,1
+		
+
+
+
+		Button:
+			size_hint: .5, 0.1
+	        text :"add"
+	        pos_hint: {"top": .1 , "center_x": .5}
+			on_release:
+                app.drag_save(spinner_id.text,spinner_id2.text, spinner_id3.text)	
+                app.drag_save1()
+                app.drags_add()
+                

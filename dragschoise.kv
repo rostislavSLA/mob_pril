@@ -1,0 +1,168 @@
+#:import utils kivy.utils
+
+
+
+
+<DragsChoise>:
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("F3EFEF")
+			Rectangle:
+				size: self.size
+				pos: self.pos
+
+
+	GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": 1 , "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_1
+        ImageButton:
+            size_hint: .1 , .1
+            source: 'icons/remover.png'
+            
+            on_release:
+                app.drags_remover(label_1,1)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_1
+
+
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .9, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_2
+        ImageButton:
+            source: 'icons/remover.png'
+            size_hint: .1 , .1
+            
+            
+            on_release:
+                app.drags_remover(label_2,2)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_2
+
+
+    
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .8, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_3
+        ImageButton:
+            size_hint: .1 , .1
+
+            source: 'icons/remover.png'
+            on_release:
+                app.drags_remover(label_3,3)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_3
+
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .7, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_4
+        ImageButton:
+            size_hint: .1 , .1
+
+            source: 'icons/remover.png'
+            on_release:
+                app.drags_remover(label_4,4)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_4
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .6, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_5
+        ImageButton:
+            size_hint: .1 , .1
+
+            source: 'icons/remover.png'
+            on_release:
+                app.drags_remover(label_5,5)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_5
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .5, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_6
+        ImageButton:
+            size_hint: .1 , .1
+
+            source: 'icons/remover.png'
+            on_release:
+                app.drags_remover(label_6,6)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_6
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .4, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_7
+        ImageButton:
+            size_hint: .1 , .1
+            
+            source: 'icons/remover.png'
+            on_release:
+                app.drags_remover(label_7,7)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_7
+    GridLayout:
+        rows: 1
+        spacing: 1
+        pos_hint: {"top": .3, "center_x": .5}
+        size_hint: .8 , .1
+        id: btn_8
+        ImageButton:
+            size_hint: .1 , .1
+
+            source: 'icons/remover.png'
+            on_release:
+                app.drags_remover(label_8,8)
+                app.drags_add()
+        Label:
+            text: "qewqeqeqeq"
+            id : label_8
+
+
+    Button:
+        size_hint: .5, 0.05
+        text :"ДОБАВИТЬ"
+        
+        pos_hint: {"top": .1 , "center_x": .5}
+        background_color: 0,0,0,0
+        canvas.before:
+            Color: 
+                rgb: utils.get_color_from_hex("F38686")
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [10]
+        on_release:
+            app.change_screen("drags")   
+            

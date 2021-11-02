@@ -1,0 +1,286 @@
+<Information>:
+    FloatLayout:
+        canvas:
+            Color: 
+                rgb: utils.get_color_from_hex("F3EFEF")
+            Rectangle:
+                size: self.size
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        GridLayout:
+            cols:1
+            size_hint:1, None
+
+            height: self.minimum_height
+            row_default_height: "50dp"
+            row_fors_default: True
+            text_size: self.width, None
+            id: des
+
+
+
+
+                
+            Button:
+                text:
+                    "Что такое Дневник Пациента" 
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: ""   
+                canvas.before:
+                    Color: 
+                        rgb:utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(1)
+
+
+
+            Button:
+                text:
+                    "Что такое сердечная недостаточность"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+
+
+
+                canvas.before:
+                    Color: 
+                        rgb: utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(2)        
+
+
+            Button:
+                text:
+                    "Методы лечения и меры профилактики ХСН"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: ""  
+                canvas.before:
+                    Color: 
+                        rgb: utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(3)
+
+           
+            Button:
+                text:
+                    "Контроль массы тела - обязательное мероприятие"
+
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb: utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(4)
+
+            Button:
+                text:
+                    "Придерживайтесь сбалансированной диеты" 
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb: utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(5)
+
+            Button:
+                text:
+                    "Ограничьте употребление алкоголя"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(6)
+
+            Button:
+                text:
+                    "Откажитесь от курения"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb: utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(7)
+
+            Button:
+                text:
+                    "Физическая активность - один из способов поддержания здоровья"
+
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(8)
+
+            Button:
+                text:
+                    "Pегулярно контролируйте артериальное давление (АД) и частоту сердечных сокращений (ЧСС)"
+
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(9)
+
+            Button:
+                text:
+                    "Поддерживайте нормальный уровень сахара в крови"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(10)
+            Button:
+                text:
+                    "Проверяйте, нет ли отеков в области нижних конечностей"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(11)
+            Button:
+                text:
+                    "Сотруднечество врача и пациента - залог успешного лечения"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(12)
+
+            Button:
+                text:
+                    "Важно знать"
+                text_size: self.width, None
+                background_color: 0,0,0,0
+                color: 110/255,83/255,83/255,1
+                background_normal: "" 
+                canvas.before:
+                    Color: 
+                        rgb:  utils.get_color_from_hex("F3EFEF")
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
+                on_release:
+                    app.change_screen("information_veiw")
+                    app.information(13)
+
+
+        
+                                    
+            
+        
+                                    
+            
